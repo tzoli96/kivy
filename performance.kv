@@ -1,0 +1,92 @@
+# performance.kv
+<GraphWidget>:
+    canvas:
+        Color:
+            rgb: 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<PerformanceApp>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        GridLayout:
+            cols: 2
+            size_hint_y: None
+            height: '50dp'
+            Label:
+                text: 'Month:'
+            Label:
+                text: 'September'
+            Label:
+                text: 'Season:'
+            Label:
+                text: '2024-2025'
+
+        GridLayout:
+            cols: 4
+            size_hint_y: None
+            height: '150dp'
+            Label:
+                text: 'Victories'
+            Label:
+                text: 'Defeats'
+            Label:
+                text: 'Touches Scored'
+            Label:
+                text: 'Touches Received'
+            Button:
+                text: '1'
+                on_release: app.update_results('victories', 20)
+            Button:
+                text: '1'
+                on_release: app.update_results('defeats', 12)
+            Button:
+                text: '1'
+                on_release: app.update_results('touches_scored', 220)
+            Button:
+                text: '1'
+                on_release: app.update_results('touches_received', 120)
+            Button:
+                text: '2'
+                on_release: app.update_results('victories', 25)
+            Button:
+                text: '2'
+                on_release: app.update_results('defeats', 18)
+            Button:
+                text: '2'
+                on_release: app.update_results('touches_scored', 250)
+            Button:
+                text: '2'
+                on_release: app.update_results('touches_received', 150)
+            Button:
+                text: '3'
+                on_release: app.update_results('victories', 15)
+            Button:
+                text: '3'
+                on_release: app.update_results('defeats', 7)
+            Button:
+                text: '3'
+                on_release: app.update_results('touches_scored', 150)
+            Button:
+                text: '3'
+                on_release: app.update_results('touches_received', 200)
+            Button:
+                text: '4'
+                on_release: app.update_results('victories', 40)
+            Button:
+                text: '4'
+                on_release: app.update_results('defeats', 10)
+            Button:
+                text: '4'
+                on_release: app.update_results('touches_scored', 300)
+            Button:
+                text: '4'
+                on_release: app.update_results('touches_received', 100)
+
+        GraphWidget:
+            size_hint_y: None
+            height: '300dp'

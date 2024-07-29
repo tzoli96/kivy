@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  kivy-app:
+    build: .
+    volumes:
+      - .:/app
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Mount the X11 socket
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    devices:
+      - "/dev/dri:/dev/dri"
+    network_mode: "host"
